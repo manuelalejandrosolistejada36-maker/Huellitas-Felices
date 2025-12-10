@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F0EAD2;
   --foreground: #171717;
 }
 
-@theme inline {
+inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -23,4 +23,160 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar states: top (por defecto) y scrolled (cuando el usuario hace scroll) */
+
+/* Estilos aplicados al contenedor interno del navbar (centrado) */
+.navbar--top .navbar-inner {
+  /* Navbar elegante: fondo blanco/crema con acento navideño sutil */
+  background: linear-gradient(135deg, #ffffff 0%, #FFF9F0 100%);
+  color: #1f2937;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(220, 38, 38, 0.08);
+  border-radius: 0;
+}
+
+/* Forzar color oscuro en enlaces cuando el navbar está en top */
+.navbar--top .navbar-inner a,
+.navbar--top .navbar-inner a * {
+  color: #1f2937 !important;
+}
+
+/* Excepción: el botón contactame tiene colores verdes */
+.navbar--top .navbar-inner a.contact-btn,
+.navbar--top .navbar-inner a.contact-btn * {
+  color: #166534 !important;
+}
+
+/* Estilos específicos para el botón 'Contactame' en estado top */
+.navbar--top .navbar-inner a.contact-btn {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  padding: 0.5rem 0.75rem;
+  transition: background-color 180ms ease, color 180ms ease, transform 120ms ease;
+}
+.navbar--top .navbar-inner a.contact-btn:hover {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+.navbar--top .navbar-inner a.contact-btn:hover * {
+  color: #ffffff !important;
+}
+
+/* Hover naranja para los enlaces del menú (nav) — anima el color suavemente */
+.navbar-inner nav a,
+.navbar-inner nav a * {
+  transition: color 180ms ease;
+}
+.navbar-inner nav a:hover,
+.navbar-inner nav a:hover * {
+  color: #4f553d !important;
+}
+
+/* El header principal en estado top será blanco por defecto (modo claro).
+   En modo oscuro esto se sobreescribe abajo para mantener transparencia. */
+.navbar--top {
+  background: linear-gradient(135deg, #ffffff 0%, #FFF9F0 100%);
+}
+
+.navbar--scrolled .navbar-inner {
+  /* Fondo semitransparente para efecto 'liquid glass' elegante */
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 30px rgba(220, 38, 38, 0.05);
+  border-radius: 50px;
+  /* En lugar de elevar, aplicamos un margin-top para separarlo del borde superior */
+  margin-top: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Aunque el resto de la web esté en modo oscuro, queremos que cuando el
+     navbar esté en la posición 'top' se vea como una barra blanca clásica
+     (fondo blanco con texto oscuro). Esto cumple tu petición de que el
+     navbar estático sea blanco y el texto negro. */
+  .navbar--top {
+    background: #DFD5C0;
+    box-shadow: 0 2px 6px rgba(16,24,40,0.04);
+  }
+  .navbar--top .navbar-inner {
+    background: #DFD5C0;
+    color: #000000; /* forzar texto negro puro incluso en dark-mode cuando está en top */
+    box-shadow: 0 2px 6px rgba(16,24,40,0.04);
+  }
+  .navbar--scrolled .navbar-inner {
+    background: rgba(17,17,17,0.5);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  }
+}
+
+/* Asegurar transiciones suaves en el contenedor */
+.navbar-inner {
+  transition: all 250ms cubic-bezier(.2,.9,.2,1);
+}
+
+/* Más separación en pantallas grandes */
+@media (min-width: 1024px) {
+  .navbar--scrolled .navbar-inner {
+    margin-top: 14px;
+  }
+}
+
+/* En modo oscuro, aumentar la separación levemente en pantallas grandes */
+@media (prefers-color-scheme: dark) and (min-width: 1024px) {
+  .navbar--scrolled .navbar-inner {
+    margin-top: 18px;
+  }
+}
+
+/* Animaciones navideñas */
+@keyframes fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100px) translateX(0);
+  }
+  100% {
+    transform: translateY(100vh) translateX(50px);
+  }
+}
+
+.animate-snowfall {
+  animation: snowfall linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
