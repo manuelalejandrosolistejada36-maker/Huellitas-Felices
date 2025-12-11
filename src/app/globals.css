@@ -29,88 +29,96 @@ body {
 
 /* Estilos aplicados al contenedor interno del navbar (centrado) */
 .navbar--top .navbar-inner {
-  /* Navbar elegante: fondo blanco/crema con acento navideño sutil */
-  background: linear-gradient(135deg, #ffffff 0%, #FFF9F0 100%);
-  color: #1f2937;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(220, 38, 38, 0.08);
+  /* Navbar elegante: fondo naranja/marrón claro */
+  background: #C88241;
+  color: #F8F8F8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(200, 130, 65, 0.2);
   border-radius: 0;
 }
 
-/* Forzar color oscuro en enlaces cuando el navbar está en top */
+/* Forzar color claro en enlaces cuando el navbar está en top */
 .navbar--top .navbar-inner a,
 .navbar--top .navbar-inner a * {
-  color: #1f2937 !important;
+  color: #F8F8F8 !important;
 }
 
 /* Excepción: el botón contactame tiene colores verdes */
 .navbar--top .navbar-inner a.contact-btn,
 .navbar--top .navbar-inner a.contact-btn * {
-  color: #166534 !important;
+  color: #F8F8F8 !important;
 }
 
 /* Estilos específicos para el botón 'Contactame' en estado top */
 .navbar--top .navbar-inner a.contact-btn {
-  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(22, 163, 74, 0.3);
+  background: linear-gradient(135deg, #1C642B 0%, #C8281F 100%) !important;
+  color: #F8F8F8 !important;
+  border: 1px solid rgba(28, 100, 43, 0.3);
   padding: 0.5rem 0.75rem;
   transition: background-color 180ms ease, color 180ms ease, transform 120ms ease;
 }
 .navbar--top .navbar-inner a.contact-btn:hover {
-  background: linear-gradient(135deg, #15803d 0%, #166534 100%) !important;
-  color: #ffffff !important;
+  background: linear-gradient(135deg, #C8281F 0%, #1C642B 100%) !important;
+  color: #F8F8F8 !important;
   transform: translateY(-1px);
 }
 .navbar--top .navbar-inner a.contact-btn:hover * {
-  color: #ffffff !important;
+  color: #F8F8F8 !important;
 }
 
-/* Hover naranja para los enlaces del menú (nav) — anima el color suavemente */
+/* Hover para los enlaces del menú (nav) — anima el color suavemente */
 .navbar-inner nav a,
 .navbar-inner nav a * {
   transition: color 180ms ease;
 }
 .navbar-inner nav a:hover,
 .navbar-inner nav a:hover * {
-  color: #4f553d !important;
+  color: #F0C84A !important;
 }
 
-/* El header principal en estado top será blanco por defecto (modo claro).
+/* El header principal en estado top será naranja/marrón claro.
    En modo oscuro esto se sobreescribe abajo para mantener transparencia. */
 .navbar--top {
-  background: linear-gradient(135deg, #ffffff 0%, #FFF9F0 100%);
+  background: #C88241;
 }
 
 .navbar--scrolled .navbar-inner {
   /* Fondo semitransparente para efecto 'liquid glass' elegante */
-  background: rgba(255, 255, 255, 0.95);
-  -webkit-backdrop-filter: blur(10px) saturate(120%);
-  backdrop-filter: blur(10px) saturate(120%);
-  border: 1px solid rgba(220, 38, 38, 0.15);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 0 30px rgba(220, 38, 38, 0.05);
+  background: rgba(200, 130, 65, 0.75) !important;
+  -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(110%);
+  backdrop-filter: blur(30px) saturate(200%) brightness(110%);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.15), 
+    0 2px 8px rgba(255, 255, 255, 0.1) inset,
+    0 0 60px rgba(240, 200, 74, 0.2);
   border-radius: 50px;
-  /* En lugar de elevar, aplicamos un margin-top para separarlo del borde superior */
   margin-top: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
-  /* Aunque el resto de la web esté en modo oscuro, queremos que cuando el
-     navbar esté en la posición 'top' se vea como una barra blanca clásica
-     (fondo blanco con texto oscuro). Esto cumple tu petición de que el
-     navbar estático sea blanco y el texto negro. */
+  /* Forzar que el navbar mantenga el color naranja incluso en dark mode */
   .navbar--top {
-    background: #DFD5C0;
-    box-shadow: 0 2px 6px rgba(16,24,40,0.04);
+    background: #C88241 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(200, 130, 65, 0.2);
   }
   .navbar--top .navbar-inner {
-    background: #DFD5C0;
-    color: #000000; /* forzar texto negro puro incluso en dark-mode cuando está en top */
-    box-shadow: 0 2px 6px rgba(16,24,40,0.04);
+    background: #C88241 !important;
+    color: #F8F8F8 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 16px rgba(200, 130, 65, 0.2);
+  }
+  .navbar--top .navbar-inner a,
+  .navbar--top .navbar-inner a * {
+    color: #F8F8F8 !important;
   }
   .navbar--scrolled .navbar-inner {
-    background: rgba(17,17,17,0.5);
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    background: rgba(200, 130, 65, 0.75) !important;
+    -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(110%);
+    backdrop-filter: blur(30px) saturate(200%) brightness(110%);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.25), 
+      0 2px 8px rgba(255, 255, 255, 0.15) inset,
+      0 0 60px rgba(240, 200, 74, 0.3);
   }
 }
 

@@ -30,13 +30,13 @@ const Navbar = () => {
       scrolled ? 'navbar--scrolled' : 'navbar--top'
     }`}>
       <div
-        className={`navbar-inner mx-auto px-4 md:px-8 flex justify-between items-center transition-all duration-300 ease-in-out ${
-          scrolled ? 'max-w-5xl py-2' : 'w-full max-w-7xl py-4'
+        className={`navbar-inner px-4 md:px-8 flex justify-between items-center transition-all duration-300 ease-in-out ${
+          scrolled ? 'max-w-5xl mx-auto py-2' : 'w-full py-4'
         }`}
       >
         {/* Logo/Ícono */}
         <div className="flex items-center space-x-2">
-          <a href="/" className={`text-lg md:text-xl font-bold ${scrolled ? 'text-white' : 'text-black'} cursor-pointer hover:opacity-80 transition-opacity duration-150`}>
+          <a href="/" className="text-lg md:text-xl font-bold cursor-pointer hover:opacity-80 transition-opacity duration-150" style={{ color: '#F8F8F8' }}>
             <span className="hidden sm:inline">🎄 Huellitas Felices 🎅</span>
             <span className="sm:hidden">🎄 Huellitas 🎅</span>
           </a>
@@ -46,19 +46,22 @@ const Navbar = () => {
         <nav className="hidden lg:flex space-x-8">
           <a
             href="#nuestro-servicios"
-            className={`${scrolled ? 'text-white' : 'text-black'} font-medium hover:text-[#ff9933] transition duration-150`}
+            className="font-medium transition duration-150"
+            style={{ color: '#F8F8F8' }}
           >
-            Nuestro Servicios
+            Nuestros Servicios
           </a>
           <a
             href="#sobre-nosotros"
-            className={`${scrolled ? 'text-white' : 'text-black'} font-medium hover:text-[#ff9933] transition duration-150`}
+            className="font-medium transition duration-150"
+            style={{ color: '#F8F8F8' }}
           >
             Sobre Nosotros
           </a>
           <a
             href="#testimonios"
-            className={`${scrolled ? 'text-white' : 'text-black'} font-medium hover:text-[#ff9933] transition duration-150`}
+            className="font-medium transition duration-150"
+            style={{ color: '#F8F8F8' }}
           >
             Testimonios
           </a>
@@ -72,7 +75,7 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <span className={`${scrolled ? 'text-white' : 'text-black'} text-sm font-semibold`}>Contactame</span>
+            <span className="text-sm font-semibold" style={{ color: '#F8F8F8' }}>Contáctame</span>
           </a>
           
           {/* Botón menú hamburguesa (solo móvil) */}
@@ -82,9 +85,9 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             <div className="space-y-1.5">
-              <div className={`w-6 h-0.5 transition-all ${scrolled ? 'bg-white' : 'bg-black'}`}></div>
-              <div className={`w-6 h-0.5 transition-all ${scrolled ? 'bg-white' : 'bg-black'}`}></div>
-              <div className={`w-6 h-0.5 transition-all ${scrolled ? 'bg-white' : 'bg-black'}`}></div>
+              <div className="w-6 h-0.5 transition-all" style={{ backgroundColor: '#F8F8F8' }}></div>
+              <div className="w-6 h-0.5 transition-all" style={{ backgroundColor: '#F8F8F8' }}></div>
+              <div className="w-6 h-0.5 transition-all" style={{ backgroundColor: '#F8F8F8' }}></div>
             </div>
           </button>
         </div>
@@ -104,7 +107,7 @@ const Navbar = () => {
                 className="text-white font-medium text-lg hover:text-yellow-400 transition duration-150"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Nuestro Servicios
+                Nuestros Servicios
               </a>
               <a
                 href="#sobre-nosotros"
@@ -127,7 +130,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Contactame
+                Contáctame
               </a>
             </nav>
           </div>

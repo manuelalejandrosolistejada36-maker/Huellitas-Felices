@@ -19,38 +19,39 @@ const Hero = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden" style={{ 
-      background: 'linear-gradient(135deg, #FFF9F0 0%, #FFF5E6 50%, #FFEFD5 100%)'
+      background: 'linear-gradient(135deg, #C88241 0%, #F0C84A 40%, #C88241 100%)'
     }}>
       {/* Efecto de nieve cayendo - sutil */}
       <div className="absolute inset-0 pointer-events-none z-10" style={{ opacity: snowOpacity * 0.5 }}>
-        {[...Array(30)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-red-400 text-xl animate-snowfall"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `-${Math.random() * 100}px`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${8 + Math.random() * 12}s`,
-              opacity: 0.4 + Math.random() * 0.3
-            }}
-          >
-            ❄️
-          </div>
-        ))}
-      </div>
+  {[...Array(30)].map((_, i) => (
+    <div
+      key={i}
+      className="absolute text-xl animate-snowfall"
+      style={{
+        color: '#C8281F',
+        left: `${Math.random() * 100}%`,
+        top: `-${Math.random() * 100}px`,
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${8 + Math.random() * 12}s`,
+        opacity: 0.4 + Math.random() * 0.3
+      }}
+    >
+      ❄️
+    </div>
+  ))}
+</div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* Contenedor de la Imagen - Primero en móvil, segundo en desktop */}
           <div className="order-1 lg:order-2 relative">
-            <div className="relative max-w-lg mx-auto lg:ml-auto">
+            <div className="relative max-w-4xl mx-auto lg:ml-auto">
               {/* Acento decorativo de fondo */}
-              <div className="absolute -top-6 -right-6 w-72 h-72 bg-linear-to-br from-red-100 to-green-50 rounded-full opacity-20 blur-3xl"></div>
+              <div className="absolute -top-6 -right-10 w-72 h-72 bg-linear-to-br from-red-100 to-green-50 rounded-full opacity-20 blur-3xl"></div>
               
               <img
-                src="/image/hf.png"
+                src="/image/huellitaslogo.png"
                 alt="Spa para mascotas"
                 className="relative w-full h-auto"
                 style={{ 
@@ -58,10 +59,10 @@ const Hero = () => {
                 }} 
               />
 
-              {/* Badge de oferta minimalista */}
-              <div className="absolute -bottom-4 -left-4 bg-linear-to-br from-red-600 to-red-700 text-white px-6 py-4 rounded-2xl shadow-xl backdrop-blur-sm">
-                <p className="text-sm font-semibold opacity-90">Oferta Especial</p>
-                <p className="text-3xl font-bold">25% OFF</p>
+              {/* Badge de oferta minimalista - Sobrepuesto en esquina inferior izquierda */}
+              <div className="absolute bottom-8 left-8 px-8 py-6 rounded-3xl shadow-2xl backdrop-blur-sm transform rotate-12" style={{ background: 'linear-gradient(135deg, #C8281F 0%, #502C1C 100%)', color: '#F8F8F8', border: '3px solid #F0C84A' }}>
+                <p className="text-xs font-semibold opacity-90 text-center">Oferta Especial</p>
+                <p className="text-3xl font-bold text-center">10% OFF</p>
               </div>
             </div>
           </div>
@@ -69,23 +70,25 @@ const Hero = () => {
           {/* Contenedor del Formulario - Segundo en móvil, primero en desktop */}
           <div className="order-2 lg:order-1">
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 bg-red-50 text-red-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold mb-4" style={{ backgroundColor: '#C8281F', color: '#F8F8F8' }}>
                 <span>🎄</span>
                 <span>Temporada Navideña</span>
               </div>
               
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-                Spa Huellitas<br />
-                <span className="text-green-700">Felices</span>
+              <h1 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight" style={{ color: '#C8281F' }}>
+                Spa Huellitas Felices<br />
+                <span style={{ color: '#1C642B' }}>Arequipa</span>
               </h1>
               
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg mb-6" style={{ color: '#502C1C' }}>
                 Cuidado profesional para tu mascota con descuentos especiales esta navidad
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-3xl shadow-xl border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">Reserva tu cita</h3>
+            <div className="p-8 rounded-3xl shadow-xl" style={{ backgroundColor: '#F8F8F8', border: '2px solid #1C642B' }}>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Gracias por contactar a Huellitas Felices Aqp 🥳
+                Somos un spa canino móvil que llega a la comodidad de tu hogar.
+                Para brindarte un mejor servicio, rellena el formulario por favor, gracias. 🙌 </h3>
               <FormBlock />
             </div>
           </div>
@@ -121,7 +124,7 @@ function FormBlock() {
   return (
     <form className="space-y-4" onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="nombre" className="block text-sm font-medium mb-2" style={{ color: '#502C1C' }}>
           Nombre completo
         </label>
         <input
@@ -130,13 +133,14 @@ function FormBlock() {
           onChange={(e) => setNombre(e.target.value)}
           type="text"
           placeholder="Tu nombre"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-600 focus:ring-2 focus:ring-green-100 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-xl border-2 outline-none transition-all"
+          style={{ borderColor: '#1C642B', backgroundColor: '#F8F8F8', color: '#502C1C' }}
           required
         />
       </div>
 
       <div>
-        <label htmlFor="mascota" className="block text-sm font-medium text-gray-700 mb-2">
+        <label htmlFor="mascota" className="block text-sm font-medium mb-2" style={{ color: '#502C1C' }}>
           Nombre de tu mascota
         </label>
         <input
@@ -145,14 +149,15 @@ function FormBlock() {
           onChange={(e) => setMascota(e.target.value)}
           type="text"
           placeholder="Nombre de tu mascota"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-600 focus:ring-2 focus:ring-green-100 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-xl border-2 outline-none transition-all"
+          style={{ borderColor: '#1C642B', backgroundColor: '#F8F8F8', color: '#502C1C' }}
           required
         />
       </div>
 
       <div>
-        <label htmlFor="consulta" className="block text-sm font-medium text-gray-700 mb-2">
-          Cuéntanos qué necesitas
+        <label htmlFor="consulta" className="block text-sm font-medium mb-2" style={{ color: '#502C1C' }}>
+          Dirección y distrito, edad de tu engreído, y servicio requerido
         </label>
         <textarea
           id="consulta"
@@ -160,14 +165,16 @@ function FormBlock() {
           onChange={(e) => setConsulta(e.target.value)}
           placeholder="Describe el servicio que necesitas..."
           rows={4}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-600 focus:ring-2 focus:ring-green-100 outline-none transition-all resize-none"
+          className="w-full px-4 py-3 rounded-xl border-2 outline-none transition-all resize-none"
+          style={{ borderColor: '#1C642B', backgroundColor: '#F8F8F8', color: '#502C1C' }}
           required
         />
       </div>
 
       <button
         type="submit"
-        className="w-full bg-linear-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-4 rounded-xl shadow-lg shadow-green-200 hover:shadow-xl hover:shadow-green-300 transition-all duration-300 flex items-center justify-center gap-2"
+        className="w-full font-semibold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
+        style={{ background: 'linear-gradient(135deg, #1C642B 0%, #C8281F 100%)', color: '#F8F8F8' }}
       >
         <span>Enviar consulta por WhatsApp</span>
         <span>→</span>

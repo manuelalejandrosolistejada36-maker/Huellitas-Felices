@@ -9,12 +9,12 @@ const testimonialsData = [
     name: "Javier Morales",
   },
   {
-    quote: "Quede fascinada con el nivel de profresionalismo, puntualidad y trataron mucho amor a mi Luna, 100% recomendable.",
+    quote: "Quedé fascinada con el nivel de profesionalismo, puntualidad y trataron con mucho amor a mi Luna, 100% recomendable.",
     name: "Sofía Martínez",
 
   },
   {
-    quote: "Lindo detalles por fiestas navideñas, mi peludita llegó súper feliz y oliendo delicioso. ¡Gracias por cuidar tan bien de ella! recomendadicimo.",
+    quote: "Lindos detalles por fiestas navideñas, mi peludita llegó súper feliz y oliendo delicioso. ¡Gracias por cuidar tan bien de ella! Recomendadísimo.",
     name: "Ricardo Pérez",
   },
 ];

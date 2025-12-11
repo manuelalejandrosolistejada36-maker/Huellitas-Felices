@@ -13,34 +13,35 @@ interface ServiceProps {
 
 // Componente individual de la tarjeta de servicio
 const ServiceCard: React.FC<ServiceProps> = ({ icon, title, description, onLearnMore }) => (
-  <div className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg border-2 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-2xl hover:scale-105 relative overflow-hidden" style={{ 
-    borderColor: '#dc2626',
-    boxShadow: '0 4px 12px rgba(220, 38, 38, 0.2), 0 0 20px rgba(22, 163, 74, 0.1)'
+  <div className="group p-6 md:p-8 rounded-2xl shadow-lg border-2 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-2xl hover:scale-105 relative overflow-hidden" style={{ 
+    backgroundColor: '#F8F8F8',
+    borderColor: '#C8281F',
+    boxShadow: '0 4px 12px rgba(200, 40, 31, 0.2), 0 0 20px rgba(28, 100, 43, 0.1)'
   }}>
     {/* Decoración navideña de esquina */}
     <div className="absolute top-2 right-2 text-2xl opacity-20 group-hover:opacity-40 transition-opacity">🎄</div>
     
     <div className="w-20 h-20 rounded-full flex items-center justify-center mb-6 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" style={{
-      background: 'linear-gradient(135deg, #dc2626 0%, #16a34a 50%, #fbbf24 100%)',
-      boxShadow: '0 4px 12px rgba(220, 38, 38, 0.3), 0 0 20px rgba(234, 179, 8, 0.2)'
+      background: 'linear-gradient(135deg, #C8281F 0%, #1C642B 50%, #F0C84A 100%)',
+      boxShadow: '0 4px 12px rgba(200, 40, 31, 0.3), 0 0 20px rgba(240, 200, 74, 0.2)'
     }}>
       <span className="text-3xl md:text-4xl">{icon}</span>
     </div>
     <h3 className="text-lg md:text-xl font-bold mb-3 text-center transition-colors duration-300" style={{
-      color: '#166534',
-      textShadow: '0 2px 4px rgba(22, 101, 52, 0.1)'
+      color: '#1C642B',
+      textShadow: '0 2px 4px rgba(28, 100, 43, 0.1)'
     }}>
       {title}
     </h3>
-    <p className="text-center text-sm leading-relaxed mb-6" style={{ color: '#991b1b' }}>
+    <p className="text-center text-sm leading-relaxed mb-6" style={{ color: '#502C1C' }}>
       {description}
     </p>
     <button 
       onClick={onLearnMore}
       className="font-semibold text-sm transition-all duration-300 flex items-center gap-2 group/link cursor-pointer px-4 py-2 rounded-full" style={{
-        color: '#ffffff',
-        background: 'linear-gradient(135deg, #dc2626 0%, #991b1b 100%)',
-        boxShadow: '0 4px 8px rgba(220, 38, 38, 0.3)'
+        color: '#F8F8F8',
+        background: 'linear-gradient(135deg, #C8281F 0%, #502C1C 100%)',
+        boxShadow: '0 4px 8px rgba(200, 40, 31, 0.3)'
       }}
     >
       Saber Más
@@ -77,10 +78,10 @@ const Services: React.FC = () => {
       onLearnMore: () => {}
     },
     {
-      icon: '🎒',
-      title: 'VENTA DE ACCESORIOS ESENCIALES',
-      description: 'Correas, arneses, juguetes y comederos. Todo lo necesario para mejorar la calidad de vida de tu mascota.',
-      fullDescription: 'Contamos con una selección curada de artículos que combinan funcionalidad, seguridad y estilo. Encuentra todo lo necesario para la vida diaria de tu mascota: correas, arneses ergonómicos, juguetes para estimulación mental y comederos especializados, todo pensado para mejorar su calidad de vida y enriquecer vuestros paseos.',
+      icon: '💉',
+      title: 'VACUNAS AL DÍA, PELUDITOS MÁS SEGUROS',
+      description: 'La mejor protección para tu mascota. Mantén sus vacunas al día y garantiza su salud y bienestar.',
+      fullDescription: 'Mantener sus vacunas al día los protege de enfermedades, fortalece su sistema inmune y les permite disfrutar cada momento sin riesgos. En nuestro spa nos preocupamos por su bienestar y te recordamos la importancia de: ✔️ Vacunas completas ✔️ Desparasitación interna y externa ✔️ Control veterinario regular ¡Un peludo protegido es un peludo feliz!',
       onLearnMore: () => {}
     },
     {
@@ -92,9 +93,9 @@ const Services: React.FC = () => {
     },
     {
       icon: '🎁',
-      title: 'PROMOCIONES EXCLUSIVAS',
-      description: 'Packs especiales y descuentos en fechas importantes. ¡Celebra con tu mejor amigo!',
-      fullDescription: 'Durante fechas clave como Navidad, el Día de San Valentín o el cumpleaños de tu mascota, lanzamos packs especiales y promociones por tiempo limitado en nuestros servicios premium y accesorios seleccionados. Síguenos en nuestras redes sociales o suscríbete a nuestro boletín para ser el primero en acceder a descuentos exclusivos y sorpresas que celebran la vida de tu mejor amigo.',
+      title: 'PROMOCIÓN PARA MÁS DE UN PELUDITO',
+      description: '¡Porque ellos no son solo mascotas… son familia!',
+      fullDescription: 'Si traes 2 o más perritos, recibirás un descuento especial en su spa. Más amor, más cuidado… ¡y más ahorro para ti! Dales un momento de relax, limpieza y cariño. Nosotros nos encargamos del resto. ¡Trae a tus engreídos y consiéntelos hoy!',
       onLearnMore: () => {}
     }
   ];
@@ -110,8 +111,8 @@ const Services: React.FC = () => {
   return (
     <>
       <section id="nuestro-servicios" className="py-12 md:py-20 px-4 md:px-8 relative" style={{
-        background: 'linear-gradient(180deg, #FECACA 0%, #FEE2E2 50%, #FFF5F5 100%)',
-        backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(22, 163, 74, 0.03) 50px, rgba(22, 163, 74, 0.03) 100px)'
+        background: 'linear-gradient(180deg, #F0C84A 0%, #F8F8F8 50%, #F0C84A 100%)',
+        backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(28, 100, 43, 0.05) 50px, rgba(28, 100, 43, 0.05) 100px)'
       }}>
         {/* Guirnalda decorativa superior */}
         <div className="absolute top-0 left-0 w-full h-2 bg-linear-to-r from-red-600 via-green-600 to-yellow-400 animate-pulse"></div>
@@ -132,7 +133,7 @@ const Services: React.FC = () => {
           <div className="text-center mb-25 relative">
             
             <h2 className="text-3xl md:text-5xl font-extrabold mb-4 relative animate-pulse" style={{
-              background: 'linear-gradient(135deg, #dc2626 0%, #16a34a 50%, #dc2626 100%)',
+              background: 'linear-gradient(135deg, #C8281F 0%, #1C642B 50%, #C8281F 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundSize: '200% auto',
@@ -140,10 +141,11 @@ const Services: React.FC = () => {
             }}>
             🎅 SERVICIOS ESPECIALES DE NAVIDAD 🎄
             </h2>
-            <div className="inline-block px-4 md:px-8 py-2 md:py-3 rounded-full font-bold mb-4 md:mb-6 animate-pulse text-sm md:text-base text-white" style={{
-              background: 'linear-gradient(135deg, #dc2626 0%, #16a34a 100%)',
-              boxShadow: '0 8px 20px rgba(220, 38, 38, 0.4), 0 0 40px rgba(234, 179, 8, 0.3)',
-              border: '2px solid #fbbf24'
+            <div className="inline-block px-4 md:px-8 py-2 md:py-3 rounded-full font-bold mb-4 md:mb-6 animate-pulse text-sm md:text-base" style={{
+              background: 'linear-gradient(135deg, #C8281F 0%, #1C642B 100%)',
+              color: '#F8F8F8',
+              boxShadow: '0 8px 20px rgba(200, 40, 31, 0.4), 0 0 40px rgba(240, 200, 74, 0.3)',
+              border: '2px solid #F0C84A'
             }}>
               ✨ ¡Ofertas Mágicas - Diciembre 2025! ✨
             </div>

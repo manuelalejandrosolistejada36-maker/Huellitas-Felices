@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="flex justify-center mt-4">
           {/* Derechos de Autor */}
           <p className="text-sm text-gray-400 mb-4 md:mb-0 text-center">
-            © 2026 Heullitas Felices. Todos los derechos reservados.
+            © 2026 Spa Huellitas Felices Arequipa. Todos los derechos reservados.
           </p>
 
         </div>

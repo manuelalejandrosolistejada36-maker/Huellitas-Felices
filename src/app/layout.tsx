@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Huellitas Felices",
+  title: "Spa Huellitas Felices Aqp",
   description: "Cuidado profesional y amoroso para tus mascotas.",
 };
 
