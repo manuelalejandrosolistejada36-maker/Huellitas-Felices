@@ -5,6 +5,7 @@ import Footer from '../app/components/Footer';
 import Services from '../app/components/Services';
 import SobreNosotros from '../app/components/Sobrenosotros';
 import TestimoniosCarrusel from '../app/components/TestimoniosCorrusel';
+import ProductGallery from '../app/components/ProductGallery';
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <Services />
         <SobreNosotros />
         <TestimoniosCarrusel />
+        <ProductGallery />
       </main>
       <Footer />
     </div>

@@ -36,9 +36,8 @@ const Navbar = () => {
       >
         {/* Logo/Ícono */}
         <div className="flex items-center space-x-2">
-          <a href="/" className="text-lg md:text-xl font-bold cursor-pointer hover:opacity-80 transition-opacity duration-150" style={{ color: '#F8F8F8' }}>
-            <span className="hidden sm:inline">🎄 Huellitas Felices 🎅</span>
-            <span className="sm:hidden">🎄 Huellitas 🎅</span>
+          <a href="/" className="text-base md:text-xl font-bold cursor-pointer hover:opacity-80 transition-opacity duration-150" style={{ color: '#F8F8F8' }}>
+            🎄 Huellitas Felices 🎅
           </a>
         </div>
 
