@@ -41,12 +41,12 @@ const Hero = () => {
   ))}
 </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 lg:py-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-50 lg:py-32">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* Contenedor de la Imagen - Primero en móvil, segundo en desktop */}
           <div className="order-1 lg:order-2 relative">
-            <div className="relative max-w-4xl mx-auto lg:ml-auto">
+            <div className="relative max-w-4xl mx-auto lg:ml-auto pb-16 lg:pb-0">
               {/* Acento decorativo de fondo */}
               <div className="absolute -top-6 -right-10 w-72 h-72 bg-linear-to-br from-red-100 to-green-50 rounded-full opacity-20 blur-3xl"></div>
               
